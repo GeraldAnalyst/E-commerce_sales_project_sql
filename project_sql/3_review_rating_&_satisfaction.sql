@@ -5,8 +5,8 @@ Questions: 1. Is there a correlation between review rating and purchase amounts?
 */
 
 SELECT
-   AVG(review_rating) AS avg_review_rating,
-   AVG(purchased_amount) as avg_purchase_amount, 
+   ROUND(AVG(review_rating), 2) AS avg_review_rating,
+   ROUND(AVG(purchased_amount),2) as avg_purchase_amount, 
    CORR(review_rating, purchased_amount) as correalation
 FROM customer_details 
 --WHERE color = 'Green' and size = 'M'

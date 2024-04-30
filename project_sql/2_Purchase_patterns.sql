@@ -17,7 +17,8 @@ FROM
 Group BY
     item_purchased
 ORDER BY 
-    purchase_count DESC
+    purchase_count DESC;
+
 
 
 --2. which category is most bought 
@@ -41,7 +42,9 @@ SELECT
 FROM 
     customer_details
 GROUP BY
-    season;
+    season
+ORDER BY
+    season_revenue DESC;
 
 /* Lets delve into specific/ more detailed purchased patterns by infusing size, color
 with category, gender etc.
@@ -54,11 +57,20 @@ SELECT
     SUM(purchased_amount) as Revenue_by_size
 FROM 
     customer_details
-WHERE category = 'Clothing' --AND  gender = 'Female'
+--WHERE category = 'Clothing' --AND  gender = 'Female'
 GROUP BY
     SIZE
 ORDER BY
     Revenue_by_size DESC;
+
+/* here is the results
+"size","size_count","revenue_by_size"
+"M","1755","105167"
+"L","1053","61667"
+"S","663","40468"
+"XL","429","25779"
+
+*/
 
 ---Accessories category
 SELECT  
